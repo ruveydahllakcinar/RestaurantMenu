@@ -1,0 +1,22 @@
+﻿@using RestaurantMenu.Models.Classes
+@model List<Blog>
+@foreach (var x in Model)
+{
+    <div class="col-lg-4 col-md-6 column column-img" id="zoomIn">
+        <div class="services-gd">
+            <div class="serve-info">
+                <h3 class="date">@x.Date.ToString("dd.MM.yyyy")</h3>
+                <a href="#blog">
+                    <figure>
+                        <img src="/Image/@x.BlogImg" alt="" />
+                    </figure>
+                </a>
+                <h3>
+                    <a href="/Blog/BlogDetail/@x.Id" class="vv-link">
+                       @x.Title
+                    </a>
+                </h3>
+            </div>
+        </div>
+    </div>
+}

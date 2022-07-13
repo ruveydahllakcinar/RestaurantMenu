@@ -1,0 +1,24 @@
+﻿
+<div class="col-md-8 mt-4">
+
+    <form id="algin-form" method="post">
+        <div class="form-group">
+        
+            <input type="hidden" name="BlogId" class="form-control" value="@ViewBag.value" required>
+
+            <label for="name">User Name</label>
+            <input type="text" name="UserName" id="fullname" class="form-control" required>
+
+            <label for="email">Email</label>
+            <input type="text" name="Mail" id="email" class="form-control" required>
+            <label for="date">Date</label>
+            <input type="date" name="Date" class="form-control"></input>
+
+            <label for="message">Comment</label>
+            <textarea name="Comment" msg cols="30" rows="5" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Post Comment" style="background-color: #F9BD29" />
+        </div>
+    </form>
+</div>

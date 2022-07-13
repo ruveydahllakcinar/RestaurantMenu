@@ -1,103 +1,267 @@
 ﻿
+@model RestaurantMenu.Models.Classes.BlogComment
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_MenuLayout.cshtml";
 }
 
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-<!DOCTYPE HTML>
-<html>
+<html lang="en">
+
+
 <head>
-	<title>Personal Blog a Blogging Category Flat Bootstarp  Responsive Website Template | Home :: w3layouts</title>
-	<link href="~/web/css/bootstrap.css" rel='stylesheet' type='text/css' />
-	<link href="~/web/css/style.css" rel='stylesheet' type='text/css' />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="keywords" content="Personal Blog Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
-	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" 
-	/>
-
-
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Foodies| Blog</title>
+    <!-- google-fonts -->
+    <link href="//fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
+          rel="stylesheet">
+    <!-- //google-fonts -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <!-- Template CSS Style link -->
+    <link rel="stylesheet" href="~/blogtemp/asset/css/style.css">
 </head>
 <body>
-<!---header---->			
-<div class="header">  
-	 <div class="container">
-		 <span>
-			 <br />
-			 <br />
-			 <br />
+    <div class="inner-banner">
+        <section class="w3l-breadcrumb">
+            <div class="container">
+                <h4 class="inner-text-title font-weight-bold mb-sm-3 mb-2">Blog</h4>
+                <ul class="breadcrumbs-custom-path">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active"><span class="fa fa-chevron-right mx-2" aria-hidden="true"></span>Blog</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    <br />
+    <br />
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <!--Blog Start-->
+                    @foreach (var blogs in Model.Value1)
+                    {
+                        <div class=" card mb-5">
 
-		 </span>
-		</div> 
-</div>
-<!--/header-->
-<div class="content">
-	 <div class="container">
-		 <div class="content-grids">
-			 <div class="col-md-8 content-main">
-				 <div class="content-grid">					 
-					 <div class="content-grid-info">
-						 <img src="~/web/images/post1.jpg" alt=""/>
-						 <div class="post-info">
-						 <h4><a href="single.html">Lorem ipsum dolor sit amet</a>  July 30, 2014 / 27 Comments</h4>
-						 <p>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis.</p>
-						 <a href="single.html"><span></span>READ MORE</a>
-						 </div>
-					 </div>
-					 
-					 
-				 </div>
-			  </div>
-			  <div class="col-md-4 content-right">
-				 <div class="recent">
-					 <h3>RECENT POSTS</h3>
-					 <ul>
-					 <li><a href="#">Aliquam tincidunt mauris</a></li>
-					 <li><a href="#">Vestibulum auctor dapibus  lipsum</a></li>
-					 <li><a href="#">Nunc dignissim risus consecu</a></li>
-					 <li><a href="#">Cras ornare tristiqu</a></li>
-					 </ul>
-				 </div>
-				 <div class="comments">
-					 <h3>RECENT COMMENTS</h3>
-					 <ul>
-					 <li><a href="#">Amada Doe </a> on <a href="#">Hello World!</a></li>
-					 <li><a href="#">Peter Doe </a> on <a href="#"> Photography</a></li>
-					 <li><a href="#">Steve Roberts  </a> on <a href="#">HTML5/CSS3</a></li>
-					 </ul>
-				 </div>
-				 <div class="clearfix"></div>
-				 <div class="archives">
-					 <h3>ARCHIVES</h3>
-					 <ul>
-					 <li><a href="#">October 2013</a></li>
-					 <li><a href="#">September 2013</a></li>
-					 <li><a href="#">August 2013</a></li>
-					 <li><a href="#">July 2013</a></li>
-					 </ul>
-				 </div>
-				 <div class="categories">
-					 <h3>CATEGORIES</h3>
-					 <ul>
-					 <li><a href="#">Vivamus vestibulum nulla</a></li>
-					 <li><a href="#">Integer vitae libero ac risus e</a></li>
-					 <li><a href="#">Vestibulum commo</a></li>
-					 <li><a href="#">Cras iaculis ultricies</a></li>
-					 </ul>
-				 </div>
-				 <div class="clearfix"></div>
-			  </div>
-			  <div class="clearfix"></div>
-		  </div>
-	  </div>
-</div>
-<!---->
+                            <img src="~/Image/@blogs.BlogImg" alt=" ">
+
+                            <div class="card-body">
+                                <a href="/Blog/BlogDetail/@blogs.Id">
+                                    <h4 class="card-title">@blogs.Title</h4>
+                                </a>
+                                <p class="card-text text-muted">
+                                    @blogs.Explation.Substring(0, 50)...
+                                </p>
+                              
+                                    <a class="btn button-style mt-3" href="/Blog/BlogDetail/@blogs.Id">Read More</a>
+                                
+                            </div>
+                            <div class="card-footer text-muted">
+                                Posted on @blogs.Date.ToString("dd.MM.yyyy")
+                            </div>
+                        </div>
+                    }
+
+                    <!--Blog End-->
+                </div>
+                <div class="col-md-4">
+                    <!--Search Button Start-->
+                    <div class="card mt-3 card-border">
+                        <div class="card-shadow">
+                            <div class="card-header">
+                                <h5> Search</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Search for...">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-warning"><i class="fas fa-search"></i></button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Search Button End-->
+                    </div>
+                    <br>
+                    <!--Categories Button Start-->
+                    <div class="card mt-4">
+                        @Html.Action("BlogList", "Blog")
+                    </div>
+                    <!--Categories Button End-->
+                    <!--Tags Start-->
+                    <div class="card mt-4">
+                        <div class="card-shadow">
+                            <div class="card-header">
+                                <h5>Last Comment</h5>
+                            </div>
+                            <div class="card-body item">
+                                <div class="card-tags">
+                                    <ul>
+                                        <li><a href="#">Technology </a></li>
+                                        <li><a href="#">Food</a></li>
+                                        <li><a href="#">Animals</a></li>
+                                        <li><a href="#">Sports</a></li>
+                                        <li><a href="#">Places to visit</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Tags End-->
+
+                </div>
+            </div>
+
+    </main>    
+    <!-- Js scripts -->
+    <hr />
+    <!-- move top -->
+    <button onclick="topFunction()" id="movetop" title="Go to top">
+        <span class="fa fa-level-up" aria-hidden="true"></span>
+    </button>
+    <script>
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("movetop").style.display = "block";
+            } else {
+                document.getElementById("movetop").style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+    <!-- //move top -->
+    <!-- common jquery plugin -->
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <!-- //common jquery plugin -->
+    <!-- theme switch js (light and dark)-->
+    <script src="~/Food Menu/Foodies-Starter/assets/js/theme-change.js"></script>
+    <script>
+        function autoType(elementClass, typingSpeed) {
+            var thhis = $(elementClass);
+            thhis.css({
+                "position": "relative",
+                "display": "inline-block"
+            });
+            thhis.prepend('<div class="cursor" style="right: initial; left:0;"></div>');
+            thhis = thhis.find(".text-js");
+            var text = thhis.text().trim().split('');
+            var amntOfChars = text.length;
+            var newString = "";
+            thhis.text("|");
+            setTimeout(function () {
+                thhis.css("opacity", 1);
+                thhis.prev().removeAttr("style");
+                thhis.text("");
+                for (var i = 0; i < amntOfChars; i++) {
+                    (function (i, char) {
+                        setTimeout(function () {
+                            newString += char;
+                            thhis.text(newString);
+                        }, i * typingSpeed);
+                    })(i + 1, text[i]);
+                }
+            }, 1500);
+        }
+
+        $(document).ready(function () {
+            // Now to start autoTyping just call the autoType function with the
+            // class of outer div
+            // The second paramter is the speed between each letter is typed.
+            autoType(".type-js", 200);
+        });
+    </script>
+    <!-- //theme switch js (light and dark)-->
+    <!-- magnific popup -->
+    <script src="~/Food Menu/Foodies-Starter/assets/js/jquery.magnific-popup.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.popup-with-zoom-anim').magnificPopup({
+                type: 'inline',
+
+                fixedContentPos: false,
+                fixedBgPos: true,
+
+                overflowY: 'auto',
+
+                closeBtnInside: true,
+                preloader: false,
+
+                midClick: true,
+                removalDelay: 300,
+                mainClass: 'my-mfp-zoom-in'
+            });
+
+            $('.popup-with-move-anim').magnificPopup({
+                type: 'inline',
+
+                fixedContentPos: false,
+                fixedBgPos: true,
+
+                overflowY: 'auto',
+
+                closeBtnInside: true,
+                preloader: false,
+
+                midClick: true,
+                removalDelay: 300,
+                mainClass: 'my-mfp-slide-bottom'
+            });
+        });
+    </script>
+    <!-- //magnific popup -->
+    <!-- MENU-JS -->
+    <script>
+        $(window).on("scroll", function () {
+            var scroll = $(window).scrollTop();
+
+            if (scroll >= 80) {
+                $("#site-header").addClass("nav-fixed");
+            } else {
+                $("#site-header").removeClass("nav-fixed");
+            }
+        });
+
+        //Main navigation Active Class Add Remove
+        $(".navbar-toggler").on("click", function () {
+            $("header").toggleClass("active");
+        });
+        $(document).on("ready", function () {
+            if ($(window).width() > 991) {
+                $("header").removeClass("active");
+            }
+            $(window).on("resize", function () {
+                if ($(window).width() > 991) {
+                    $("header").removeClass("active");
+                }
+            });
+        });
+    </script>
+    <!-- //MENU-JS -->
+    <!-- disable body scroll which navbar is in active -->
+    <script>
+        $(function () {
+            $('.navbar-toggler').click(function () {
+                $('body').toggleClass('noscroll');
+            })
+        });
+    </script>
+    <!-- //disable body scroll which navbar is in active -->
+    <!--bootstrap-->
+    <script src="~/Food Menu/Foodies-Starter/assets/js/bootstrap.min.js"></script>
+    <!-- //bootstrap-->
+    <!-- //Js scripts -->
+
 </body>
 </html>
-

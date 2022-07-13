@@ -86,56 +86,9 @@ Author URL: http://w3layouts.com
             <div class="container">
                 <h3 class="title-big mb-4 pb-2">Blog Posts</h3>
                 <div class="row">
-                    @foreach (var x in Model)
-                    {
+                    @Html.Action("BlogPartial", "Default")
 
-                    <div class="col-lg-4 col-md-6 column column-img" id="zoomIn">
-                        <div class="services-gd">
-
-                            <div class="serve-info">
-
-                                <h3 class="date">@x.Date</h3>
-                                <a href="#blog">
-                                    <figure>
-                                        <img class="img-responsive" src="@x.BlogImg" alt="blog-image">
-                                    </figure>
-                                </a>
-                                <h3>
-                                    <a href="#blog" class="vv-link">
-                                        @x.Title
-                                    </a>
-                                </h3>
-
-                                <ul class="admin-list">
-                                    <li>
-                                        <a href="#blog">
-                                            <span class="fa fa-user-circle"
-                                                  aria-hidden="true"></span>
-                                            Admin
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#blog">
-                                            <span class="fa fa-heart" aria-hidden="true"></span>9
-                                            Likes
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#blog">
-                                            <span class="fa fa-comments"
-                                                  aria-hidden="true"></span>9 Comments
-                                        </a>
-                                    </li>
-
-                                </ul>
-
-                            </div>
-
-                        </div>
-                       
-                    </div>
-                    }
-                    </div>
+                </div>
             </div>
         </div>
     </section>

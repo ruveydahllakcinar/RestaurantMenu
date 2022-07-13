@@ -1,0 +1,277 @@
+
+
+.icon-btn {
+    background-color: #3ACC75;
+    color: white;
+    padding: 9px;
+    border-radius: 5px;
+}
+
+    .icon-btn:hover {
+        background-color: #3ACC75;
+        opacity: 0.9;
+    }
+
+.card-header {
+    background-color: #F9BD29;
+    color: #fff;
+}
+
+.card-body .item {
+    margin-bottom: 30px;
+}
+
+.card-categories ul {
+    list-style: none;
+    padding: 0;
+}
+
+    .card-categories ul li + li {
+        padding-top: 10px;
+    }
+
+.card-shadow {
+    -webkit-box-shadow: 10px 20px rgba(0, 0, 0, .4);
+    -moz-box-shadow: 10px 20px rgba(0, 0, 0, .4);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, .4);
+}
+
+.card-border {
+    border-radius: 30px;
+    border-style: none;
+}
+
+.btn-social {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    font-size: 1rem;
+    line-height: 2rem;
+}
+
+.btn-outline {
+    border-color: white;
+    background-color: transparent;
+    color: white;
+}
+
+    .btn-outline:hover {
+        color: #212529;
+        background-color: white;
+    }
+
+.jumbotron {
+    padding-top: 100px;
+    opacity: 0.8;
+    background-color: #804E64;
+    color: #fff;
+}
+
+.card-tags {
+    margin-bottom: -10px;
+}
+
+    .card-tags ul {
+        list-style: none;
+        padding: 0;
+    }
+
+        .card-tags ul li {
+            display: inline-block;
+        }
+
+        .card-tags ul a {
+            color: #804E64;
+            font-size: 14px;
+            padding: 6px 14px;
+            margin: 0 6px 8px 0;
+            border: 1px solid #e4eff5;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+            .card-tags ul a:hover {
+                color: #000;
+                border: 1px solid #f8ce8f;
+                background: #f8ce8f;
+            }
+
+            .card-tags ul a span {
+                padding-left: 5px;
+                color: #bedae8;
+                font-size: 14px;
+            }
+/*Blog*/
+
+.max {
+    width: 500px important !;
+    height: 500px;
+}
+
+.width {
+    width: 500px;
+    height: 300px important !;
+}
+
+
+.dots {
+    height: 4px;
+    width: 4px;
+    margin-bottom: 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.badge {
+    padding: 7px;
+    padding-right: 9px;
+    padding-left: 16px;
+    box-shadow: 5px 6px 6px 2px #e9ecef;
+}
+
+.user-img {
+    margin-top: 4px;
+}
+
+.check-icon {
+    font-size: 17px;
+    color: #c3bfbf;
+    top: 1px;
+    position: relative;
+    margin-left: 3px;
+}
+
+.form-check-input {
+    margin-top: 6px;
+    margin-left: -24px !important;
+    cursor: pointer;
+}
+
+
+.form-check-input:focus {
+ box-shadow: none;
+}
+
+
+.icons i {
+    margin-left: 8px;
+}
+
+.reply {
+    margin-left: 12px;
+}
+
+.reply small {
+        color: #b7b4b4;
+    }
+
+ .reply small:hover {
+   color: green;
+   cursor: pointer;
+ }
+
+@media(min-width:568px) {
+    .end {
+        margin-left: auto;
+    }
+}
+
+@media(max-width:768px) {
+    #post {
+        width: 100%;
+    }
+}
+
+#clicked {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    text-align: center;
+    width: 100%;
+    background-color: #ecb21f;
+    border-color: #a88734 #9c7e31 #846a29;
+    color: black;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 13px;
+}
+
+#profile {
+    background-color: unset;
+}
+
+#post {
+    margin: 10px;
+    padding: 6px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: center;
+    background-color: #ecb21f;
+    border-color: #a88734 #9c7e31 #846a29;
+    color: black;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 13px;
+    width: 50%;
+}
+
+
+#nav-items li a, #profile {
+    text-decoration: none;
+    color: rgb(224, 219, 219);
+    background-color: black;
+}
+
+
+.comments {
+    margin-top: 5%;
+    margin-left: 20px;
+}
+
+
+.comment {
+    border: 1px solid rgba(16, 46, 46, 1);
+    background-color: rgba(16, 46, 46, 0.973);
+    float: left;
+    border-radius: 5px;
+    padding-left: 40px;
+    padding-right: 30px;
+    padding-top: 10px;
+}
+
+    .comment h4, .comment span, .darker h4, .darker span {
+        display: inline;
+    }
+
+    .comment p, .comment span, .darker p, .darker span {
+        color: rgb(184, 183, 183);
+    }
+
+h1, h4 {
+    color: black;
+    font-weight: bold;
+}
+
+label {
+    color: black;
+}
+
+#align-form {
+    margin-top: 20px;
+}
+
+.form-group p a {
+    color: black;
+}
+
+
+.form-group input, .form-group textarea {
+    border: 1px solid #DFDFDF;
+    border-radius: 12px;
+}
+
+form {
+    border: 1px solid #DFDFDF;
+    border-radius: 5px;
+    padding: 20px;
+}

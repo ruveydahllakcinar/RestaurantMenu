@@ -1,0 +1,36 @@
+﻿@using RestaurantMenu.Models.Classes
+@model List<NewMember>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<table class="table table-bordered" style="margin-top:20px">
+
+    <tr>
+
+        <th>Id</th>
+        <th>User Name</th>
+        <th>User Surname</th>
+        <th>User Mail</th>
+        <th>User City</th>
+
+
+    </tr>
+    @foreach (var user in Model)
+    {
+        <tr>
+            <td>@user.MemberId</td>
+            <td>@user.MemberName</td>
+            <td>@user.MemberSurname ₺</td>
+            <td>@user.MemberMail</td>
+            <td>@user.MemberCity</td>
+            <td><a href="/Admin/DeleteEat/@user.MemberId" class="btn btn-danger">Delete</a></td>
+            <td><a href="/Admin/MakeEat/@user.MemberId" class="btn btn-success">Update</a></td>
+        </tr>
+    }
+
+
+</table>
+<a href="/Admin/AddNewUser" class="btn btn-primary">ADD NEW USER</a>

@@ -1,0 +1,32 @@
+﻿@model RestaurantMenu.Models.Classes.FoodList
+@{
+    ViewBag.Title = "MakeEat";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Add Eat</h2>
+
+<br />
+@using (Html.BeginForm("UpdateEat", "Admin", FormMethod.Post))
+{
+<div class="form-group">
+
+    @Html.LabelFor(x => x.EatName)
+    @Html.TextBoxFor(x => x.EatName, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Price)
+    @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Explanation)
+    @Html.TextAreaFor(x => x.Explanation, new { @class = "form-control" })
+    <br />
+    @Html.HiddenFor(x => x.Id, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.TypeofFood)
+    @Html.DropDownListFor(x => x.Id, (List<SelectListItem>)ViewBag.vl1, new { @class = "form-control" })
+    <br />
+</div>
+
+    <button class="btn btn-warning">UPDATE</button>
+}
+

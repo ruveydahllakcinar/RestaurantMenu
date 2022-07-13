@@ -1,0 +1,19 @@
+﻿@model RestaurantMenu.Models.Classes.BlogComment
+
+<div class="card-shadow">
+    <div class="card-header">
+        <h5>LATEST BLOGS</h5>
+    </div>
+    <div class="card-body item">
+        <div class="card-categories">
+            @foreach (var lastblog in Model.Value3)
+            {
+                <ul>
+                    <li><a href="/Blog/BlogDetail/@lastblog.Id">@lastblog.Title</a></li>
+
+                </ul>
+            }
+        </div>
+    </div>
+</div>
+

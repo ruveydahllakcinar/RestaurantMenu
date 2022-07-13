@@ -13,6 +13,8 @@ namespace RestaurantMenu.Models.Classes
         public string UserName { get; set; }
         public string Mail { get; set; }
         public string Comment { get; set; }
+        public DateTime Date { get; set; }
+
         public int BlogId { get; set; }
         public virtual Blog Blog { get; set; }
     }

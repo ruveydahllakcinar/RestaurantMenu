@@ -1,0 +1,26 @@
+﻿@model RestaurantMenu.Models.Classes.FoodList
+
+@{
+    ViewBag.Title = "AddEat";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Add Eat</h2>
+
+<br />
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.EatName)
+    @Html.TextBoxFor(x => x.EatName, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Price)
+    @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Explanation)
+    @Html.TextBoxFor(x => x.Explanation, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-warning">SAVE</button>
+
+</form>
+
+

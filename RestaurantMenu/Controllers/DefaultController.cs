@@ -16,5 +16,12 @@ namespace RestaurantMenu.Controllers
             var values = c.Blogs.ToList();
             return View(values);
         }
+
+        public PartialViewResult BlogPartial()
+        {
+
+            var degerler = c.Blogs.OrderByDescending(x => x.Id).Take(3).ToList();
+            return PartialView(degerler);
+        }
     }
 }

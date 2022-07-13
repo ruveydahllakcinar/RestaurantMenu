@@ -14,5 +14,6 @@ namespace RestaurantMenu.Models.Classes
         public DbSet<Comments> Comments { get; set; }
         public DbSet<FoodList> FoodLists { get; set; }
         public DbSet<TypeofFood> TypeofFoods { get; set; }
+        public DbSet<NewMember> NewMembers  { get; set; }
     }
 }

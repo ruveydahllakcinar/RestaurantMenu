@@ -1,0 +1,34 @@
+﻿@using RestaurantMenu.Models.Classes
+@model List<FoodList>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered" style="margin-top:20px">
+
+    <tr>
+
+        <th>Id</th>
+        <th>EatName</th>
+        <th>Price</th>
+        <th>Explanation</th>
+        <th>Delete</th>
+        <th>Update</th>
+
+    </tr>
+    @foreach (var foodlist in Model)
+    {
+        <tr>
+            <td>@foodlist.Id</td>
+            <td>@foodlist.EatName</td>
+            <td>@foodlist.Price ₺</td>
+            <td>@foodlist.Explanation</td>
+            <td><a href="/Admin/DeleteEat/@foodlist.Id" class="btn btn-danger">Delete</a></td>
+            <td><a href="/Admin/MakeEat/@foodlist.Id" class="btn btn-success">Update</a></td>
+        </tr>
+    }
+
+
+</table>
+<a href="/Admin/AddEat" class="btn btn-primary">ADD EAT</a>

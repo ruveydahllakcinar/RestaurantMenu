@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -26,6 +27,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>4.3</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -128,10 +130,14 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="Controllers\NewUserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -139,13 +145,80 @@
     <Compile Include="Models\Classes\Abouts.cs" />
     <Compile Include="Models\Classes\Admin.cs" />
     <Compile Include="Models\Classes\Blog.cs" />
+    <Compile Include="Models\Classes\BlogComment.cs" />
     <Compile Include="Models\Classes\Comments.cs" />
     <Compile Include="Models\Classes\Context.cs" />
     <Compile Include="Models\Classes\FoodList.cs" />
+    <Compile Include="Models\Classes\NewMember.cs" />
     <Compile Include="Models\Classes\TypeofFood.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="blogtemp\about.html" />
+    <Content Include="blogtemp\asset\css\style.css" />
+    <Content Include="blogtemp\asset\js\bootstrap.bundle.js" />
+    <Content Include="blogtemp\asset\js\bootstrap.bundle.min.js" />
+    <Content Include="blogtemp\asset\js\bootstrap.esm.js" />
+    <Content Include="blogtemp\asset\js\bootstrap.esm.min.js" />
+    <Content Include="blogtemp\asset\js\bootstrap.js" />
+    <Content Include="blogtemp\asset\js\bootstrap.min.js" />
+    <Content Include="blogtemp\blog.html" />
+    <Content Include="blogtemp\contact.html" />
+    <Content Include="blogtemp\img\about.png" />
+    <Content Include="blogtemp\img\animals.jpg" />
+    <Content Include="blogtemp\img\autumn.jpg" />
+    <Content Include="blogtemp\img\bg.jpg" />
+    <Content Include="blogtemp\img\blue.jpg" />
+    <Content Include="blogtemp\img\boat.jpg" />
+    <Content Include="blogtemp\img\books.jpg" />
+    <Content Include="blogtemp\img\calm.jpg" />
+    <Content Include="blogtemp\img\cats.jpg" />
+    <Content Include="blogtemp\img\chicken food.jpg" />
+    <Content Include="blogtemp\img\child.jpg" />
+    <Content Include="blogtemp\img\clothes.jpg" />
+    <Content Include="blogtemp\img\coffee.jpg" />
+    <Content Include="blogtemp\img\delicious.jpg" />
+    <Content Include="blogtemp\img\fabrica.jpg" />
+    <Content Include="blogtemp\img\family.jpg" />
+    <Content Include="blogtemp\img\fashion clothes.jpg" />
+    <Content Include="blogtemp\img\fashion.jpg" />
+    <Content Include="blogtemp\img\food.jpg" />
+    <Content Include="blogtemp\img\forever.jpg" />
+    <Content Include="blogtemp\img\hand-overlay.jpg" />
+    <Content Include="blogtemp\img\hands.jpg" />
+    <Content Include="blogtemp\img\headphone.jpg" />
+    <Content Include="blogtemp\img\house.jpg" />
+    <Content Include="blogtemp\img\ice cream.jpg" />
+    <Content Include="blogtemp\img\jewellery.jpg" />
+    <Content Include="blogtemp\img\leaf-tree.jpg" />
+    <Content Include="blogtemp\img\logo.png" />
+    <Content Include="blogtemp\img\our-services-1.png" />
+    <Content Include="blogtemp\img\our-services-2.png" />
+    <Content Include="blogtemp\img\our-services-3.png" />
+    <Content Include="blogtemp\img\path.jpg" />
+    <Content Include="blogtemp\img\people-join.jpg" />
+    <Content Include="blogtemp\img\picnic.jpg" />
+    <Content Include="blogtemp\img\plants.jpg" />
+    <Content Include="blogtemp\img\pumpkins.jpg" />
+    <Content Include="blogtemp\img\purple tree.jpg" />
+    <Content Include="blogtemp\img\roller.jpg" />
+    <Content Include="blogtemp\img\sapling.jpg" />
+    <Content Include="blogtemp\img\sea ​​creatures.jpg" />
+    <Content Include="blogtemp\img\shoes.jpg" />
+    <Content Include="blogtemp\img\Slider-1.jpg" />
+    <Content Include="blogtemp\img\slider-2.jpg" />
+    <Content Include="blogtemp\img\Slider-3.jpg" />
+    <Content Include="blogtemp\img\Slider-4.jpg" />
+    <Content Include="blogtemp\img\Slider-5.jpg" />
+    <Content Include="blogtemp\img\Slider-6.jpg" />
+    <Content Include="blogtemp\img\smile.jpg" />
+    <Content Include="blogtemp\img\spor.jpg" />
+    <Content Include="blogtemp\img\sub.png" />
+    <Content Include="blogtemp\img\wind rose.jpg" />
+    <Content Include="blogtemp\index.html" />
+    <Content Include="blogtemp\index2.html" />
+    <Content Include="blogtemp\index3.html" />
+    <Content Include="blogtemp\post.html" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -207,6 +280,13 @@
     <Content Include="Image\Breakfast.png" />
     <Content Include="Image\pancakes.png" />
     <Content Include="Image\French Fries.png" />
+    <Content Include="LoginTemplate\css\font-awesome.css" />
+    <Content Include="LoginTemplate\css\style.css" />
+    <Content Include="LoginTemplate\fonts\fontawesome-webfont.svg" />
+    <Content Include="LoginTemplate\images\bann.jpg" />
+    <Content Include="LoginTemplate\images\banner.jpg" />
+    <Content Include="LoginTemplate\index.html" />
+    <Content Include="LoginTemplate\w3layouts-License.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Food Menu\Foodies-Starter\assets\fonts\fontawesome-webfont.eot" />
@@ -214,25 +294,56 @@
     <Content Include="Food Menu\Foodies-Starter\assets\fonts\fontawesome-webfont.woff" />
     <Content Include="Food Menu\Foodies-Starter\assets\fonts\fontawesome-webfont.woff2" />
     <Content Include="Food Menu\Foodies-Starter\assets\fonts\FontAwesome.otf" />
-    <Content Include="web\about.html" />
-    <Content Include="web\contact.html" />
-    <Content Include="web\css\bootstrap.css" />
-    <Content Include="web\css\style.css" />
-    <Content Include="web\images\avatar.png" />
-    <Content Include="web\images\icon3.png" />
-    <Content Include="web\images\logo.jpg" />
-    <Content Include="web\images\man.jpg" />
-    <Content Include="web\images\more.png" />
-    <Content Include="web\images\post1.jpg" />
-    <Content Include="web\images\post2.jpg" />
-    <Content Include="web\images\post3.jpg" />
-    <Content Include="web\images\search.png" />
-    <Content Include="web\index.html" />
-    <Content Include="web\js\easing.js" />
-    <Content Include="web\js\jquery.min.js" />
-    <Content Include="web\js\move-top.js" />
-    <Content Include="web\single.html" />
-    <Content Include="web\w3layouts-License.txt" />
+    <Content Include="blogtemp\asset\js\bootstrap.bundle.js.map" />
+    <Content Include="blogtemp\asset\js\bootstrap.bundle.min.js.map" />
+    <Content Include="blogtemp\asset\js\bootstrap.esm.js.map" />
+    <Content Include="blogtemp\asset\js\bootstrap.esm.min.js.map" />
+    <Content Include="blogtemp\asset\js\bootstrap.js.map" />
+    <Content Include="blogtemp\asset\js\bootstrap.min.js.map" />
+    <Content Include="LoginTemplate\fonts\fontawesome-webfont.eot" />
+    <Content Include="LoginTemplate\fonts\fontawesome-webfont.ttf" />
+    <Content Include="LoginTemplate\fonts\fontawesome-webfont.woff" />
+    <Content Include="LoginTemplate\fonts\fontawesome-webfont.woff2" />
+    <Content Include="LoginTemplate\fonts\FontAwesome.otf" />
+    <Content Include="Web\.gitignore" />
+    <Content Include="Web\dist\401.html" />
+    <Content Include="Web\dist\404.html" />
+    <Content Include="Web\dist\500.html" />
+    <Content Include="Web\dist\assets\demo\chart-area-demo.js" />
+    <Content Include="Web\dist\assets\demo\chart-bar-demo.js" />
+    <Content Include="Web\dist\assets\demo\chart-pie-demo.js" />
+    <Content Include="Web\dist\assets\demo\datatables-demo.js" />
+    <Content Include="Web\dist\assets\img\error-404-monochrome.svg" />
+    <Content Include="Web\dist\charts.html" />
+    <Content Include="Web\dist\css\1.png" />
+    <Content Include="Web\dist\css\styles.css" />
+    <Content Include="Web\dist\index.html" />
+    <Content Include="Web\dist\js\scripts.js" />
+    <Content Include="Web\dist\layout-sidenav-light.html" />
+    <Content Include="Web\dist\layout-static.html" />
+    <Content Include="Web\dist\login.html" />
+    <Content Include="Web\dist\password.html" />
+    <Content Include="Web\dist\register.html" />
+    <Content Include="Web\dist\tables.html" />
+    <Content Include="Web\index.html" />
+    <Content Include="Web\scripts\build-assets.js" />
+    <Content Include="Web\scripts\build-pug.js" />
+    <Content Include="Web\scripts\build-scripts.js" />
+    <Content Include="Web\scripts\build-scss.js" />
+    <Content Include="Web\scripts\clean.js" />
+    <Content Include="Web\scripts\render-assets.js" />
+    <Content Include="Web\scripts\render-pug.js" />
+    <Content Include="Web\scripts\render-scripts.js" />
+    <Content Include="Web\scripts\render-scss.js" />
+    <Content Include="Web\scripts\sb-watch.js" />
+    <Content Include="Web\scripts\start-debug.js" />
+    <Content Include="Web\scripts\start.js" />
+    <Content Include="Web\src\assets\demo\chart-area-demo.js" />
+    <Content Include="Web\src\assets\demo\chart-bar-demo.js" />
+    <Content Include="Web\src\assets\demo\chart-pie-demo.js" />
+    <Content Include="Web\src\assets\demo\datatables-demo.js" />
+    <Content Include="Web\src\assets\img\error-404-monochrome.svg" />
+    <Content Include="Web\src\js\scripts.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -263,6 +374,65 @@
     <Content Include="Views\About\Index.cshtml" />
     <Content Include="Views\Menu\Index.cshtml" />
     <Content Include="Views\Blog\Index.cshtml" />
+    <Content Include="Views\Blog\BlogDetail.cshtml" />
+    <Content Include="Views\Blog\BlogList.cshtml" />
+    <Content Include="Views\Blog\WriteComment.cshtml" />
+    <Content Include="Views\Default\BlogPartial.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Login\Register.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Login\Writer.cshtml" />
+    <Content Include="Web\.browserslistrc" />
+    <Content Include="Web\.travis.yml" />
+    <Content Include="Web\LICENSE" />
+    <Content Include="Web\package-lock.json" />
+    <Content Include="Web\package.json" />
+    <Content Include="Web\README.md" />
+    <Content Include="Web\src\pug\layouts\authentication.pug" />
+    <Content Include="Web\src\pug\layouts\dashboard.pug" />
+    <Content Include="Web\src\pug\layouts\error.pug" />
+    <Content Include="Web\src\pug\layouts\includes\footer.pug" />
+    <Content Include="Web\src\pug\layouts\includes\head\css.pug" />
+    <Content Include="Web\src\pug\layouts\includes\head\icons.pug" />
+    <Content Include="Web\src\pug\layouts\includes\head\meta.pug" />
+    <Content Include="Web\src\pug\layouts\includes\head\title.pug" />
+    <Content Include="Web\src\pug\layouts\includes\navigation\sidenav.pug" />
+    <Content Include="Web\src\pug\layouts\includes\navigation\topnav.pug" />
+    <Content Include="Web\src\pug\layouts\includes\scripts.pug" />
+    <Content Include="Web\src\pug\pages\401.pug" />
+    <Content Include="Web\src\pug\pages\404.pug" />
+    <Content Include="Web\src\pug\pages\500.pug" />
+    <Content Include="Web\src\pug\pages\charts.pug" />
+    <Content Include="Web\src\pug\pages\includes\datatable.pug" />
+    <Content Include="Web\src\pug\pages\includes\page-header.pug" />
+    <Content Include="Web\src\pug\pages\index.pug" />
+    <Content Include="Web\src\pug\pages\layout-sidenav-light.pug" />
+    <Content Include="Web\src\pug\pages\layout-static.pug" />
+    <Content Include="Web\src\pug\pages\login.pug" />
+    <Content Include="Web\src\pug\pages\password.pug" />
+    <Content Include="Web\src\pug\pages\register.pug" />
+    <Content Include="Web\src\pug\pages\tables.pug" />
+    <Content Include="Web\src\scss\layout\_authentication.scss" />
+    <Content Include="Web\src\scss\layout\_dashboard-default.scss" />
+    <Content Include="Web\src\scss\layout\_dashboard-fixed.scss" />
+    <Content Include="Web\src\scss\layout\_error.scss" />
+    <Content Include="Web\src\scss\navigation\sidenav\_sidenav-dark.scss" />
+    <Content Include="Web\src\scss\navigation\sidenav\_sidenav-light.scss" />
+    <Content Include="Web\src\scss\navigation\sidenav\_sidenav.scss" />
+    <Content Include="Web\src\scss\navigation\_nav.scss" />
+    <Content Include="Web\src\scss\navigation\_topnav.scss" />
+    <Content Include="Web\src\scss\styles.scss" />
+    <Content Include="Web\src\scss\variables\_navigation.scss" />
+    <Content Include="Web\src\scss\variables\_spacing.scss" />
+    <Content Include="Web\src\scss\_global.scss" />
+    <Content Include="Web\src\scss\_variables.scss" />
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\AddEat.cshtml" />
+    <Content Include="Views\Admin\MakeEat.cshtml" />
+    <Content Include="Views\Admin\AddNewUser.cshtml" />
+    <Content Include="Views\NewUser\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -280,11 +450,15 @@
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
