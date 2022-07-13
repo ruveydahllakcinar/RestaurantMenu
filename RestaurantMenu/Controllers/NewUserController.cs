@@ -13,14 +13,50 @@ namespace RestaurantMenu.Controllers
         Context c = new Context();
         public ActionResult Index()
         {
+            var values = c.NewMembers.ToList();
+            return View(values);
+           
+        }
+        [HttpGet]
+        public ActionResult AddUser()
+        {
             return View();
         }
 
-        public ActionResult AddNewUser(NewMember nm)
+        [HttpPost]
+        public ActionResult AddUser(NewMember nm)
         {
             c.NewMembers.Add(nm);
+            c.SaveChanges();                      
+            return RedirectToAction("Index");
+        }
+
+
+        public ActionResult DeleteUser(int id)
+        {
+            var user = c.NewMembers.Find(id);
+            c.NewMembers.Remove(user);
             c.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public ActionResult MakeUser(int id)
+        {
+            var users = c.NewMembers.Find(id);
+            return View("MakeUser", users);
+        }
+        public ActionResult UpdateUser(NewMember newMember)
+        {
+            var nm = c.NewMembers.Find(newMember.MemberId);
+            nm.MemberName = newMember.MemberName;
+            nm.MemberSurname = newMember.MemberSurname;
+            nm.MemberCity = newMember.MemberCity;
+            nm.MemberPassword = newMember.MemberPassword;
+            c.SaveChanges();
+            return RedirectToAction("Index");
+
+
+
         }
     }
 }

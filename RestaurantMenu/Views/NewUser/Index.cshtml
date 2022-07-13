@@ -5,32 +5,32 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-
 <table class="table table-bordered" style="margin-top:20px">
 
     <tr>
 
-        <th>Id</th>
-        <th>User Name</th>
-        <th>User Surname</th>
-        <th>User Mail</th>
-        <th>User City</th>
-
+        <th>Member Id</th>
+        <th>Member Name</th>
+        <th>Member Surname</th>
+        <th>Member City</th>
+        <th>Member Password</th>
+        <th>Delete</th>
+        <th>Update</th>
 
     </tr>
-    @foreach (var user in Model)
+    @foreach (var member in Model)
     {
         <tr>
-            <td>@user.MemberId</td>
-            <td>@user.MemberName</td>
-            <td>@user.MemberSurname ₺</td>
-            <td>@user.MemberMail</td>
-            <td>@user.MemberCity</td>
-            <td><a href="/Admin/DeleteEat/@user.MemberId" class="btn btn-danger">Delete</a></td>
-            <td><a href="/Admin/MakeEat/@user.MemberId" class="btn btn-success">Update</a></td>
+            <td>@member.MemberId</td>
+            <td>@member.MemberName</td>
+            <td>@member.MemberSurname</td>
+            <td>@member.MemberCity</td>
+            <td>@member.MemberPassword</td>
+            <td><a href="/NewUser/DeleteUser/@member.MemberId" class="btn btn-danger">Delete</a></td>
+            <td><a href="/NewUser/MakeUser/@member.MemberId" class="btn btn-success">Update</a></td>
         </tr>
     }
-
-
 </table>
-<a href="/Admin/AddNewUser" class="btn btn-primary">ADD NEW USER</a>
+
+<a href="/NewUser/AddUser" class="btn btn-primary">ADD NEW USER</a>
+
