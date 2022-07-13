@@ -1,0 +1,36 @@
+﻿@using RestaurantMenu.Models.Classes
+@model List<Blog>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered" style="margin-top:20px">
+
+    <tr>
+
+        <th>Id</th>
+        <th>Title</th>
+        <th>Date</th>
+        <th>Explanation</th>
+        <th>Delete</th>
+        <th>Update</th>
+
+    </tr>
+    @foreach (var blog in Model)
+    {
+        <tr>
+            <td>@blog.Id</td>
+            <td>@blog.Title</td>
+            <td>@blog.Date.ToString("dd.MM.yyyy")</td>
+            <td>@blog.Explation.Substring(0,250)...</td>
+            <td><a href="/Writer/DeleteWriter/@blog.Id" class="btn btn-danger">Delete</a></td>
+            <td><a href="/Writer/MakeWriter/@blog.Id" class="btn btn-success">Update</a></td>
+        </tr>
+    }
+
+
+</table>
+<a href="/Writer/AddBlog" class="btn btn-primary">ADD BLOG</a>
+

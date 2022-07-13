@@ -50,6 +50,7 @@ namespace RestaurantMenu.Controllers
             var nm = c.NewMembers.Find(newMember.MemberId);
             nm.MemberName = newMember.MemberName;
             nm.MemberSurname = newMember.MemberSurname;
+            nm.MemberMail = newMember.MemberMail;
             nm.MemberCity = newMember.MemberCity;
             nm.MemberPassword = newMember.MemberPassword;
             c.SaveChanges();
