@@ -152,6 +152,7 @@
     <Compile Include="Models\Classes\FoodList.cs" />
     <Compile Include="Models\Classes\NewMember.cs" />
     <Compile Include="Models\Classes\TypeofFood.cs" />
+    <Compile Include="Models\Classes\Writer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -434,6 +435,7 @@
     <Content Include="Views\NewUser\MakeUser.cshtml" />
     <Content Include="Views\Writer\Index.cshtml" />
     <Content Include="Views\Writer\AddBlog.cshtml" />
+    <Content Include="Views\Writer\MakeBlog.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

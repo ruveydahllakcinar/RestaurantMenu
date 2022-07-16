@@ -13,6 +13,7 @@
         <th>Id</th>
         <th>Title</th>
         <th>Date</th>
+        <th>Image</th>
         <th>Explanation</th>
         <th>Delete</th>
         <th>Update</th>
@@ -24,9 +25,10 @@
             <td>@blog.Id</td>
             <td>@blog.Title</td>
             <td>@blog.Date.ToString("dd.MM.yyyy")</td>
+            <td>@blog.BlogImg</td>
             <td>@blog.Explation.Substring(0,250)...</td>
             <td><a href="/Writer/DeleteWriter/@blog.Id" class="btn btn-danger">Delete</a></td>
-            <td><a href="/Writer/MakeWriter/@blog.Id" class="btn btn-success">Update</a></td>
+            <td><a href="/Writer/MakeBlog/@blog.Id" class="btn btn-success">Update</a></td>
         </tr>
     }
 

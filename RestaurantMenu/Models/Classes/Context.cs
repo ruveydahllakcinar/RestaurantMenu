@@ -15,5 +15,6 @@ namespace RestaurantMenu.Models.Classes
         public DbSet<FoodList> FoodLists { get; set; }
         public DbSet<TypeofFood> TypeofFoods { get; set; }
         public DbSet<NewMember> NewMembers  { get; set; }
+        public DbSet<Writer> Writers  { get; set; }
     }
 }

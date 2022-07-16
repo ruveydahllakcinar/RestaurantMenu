@@ -15,5 +15,6 @@ namespace RestaurantMenu.Models.Classes
         public string Explation { get; set; }
         public string BlogImg { get; set; }
         public ICollection<Comments> Comments { get; set; }
+        public ICollection<Writer> Writers { get; set; }
     }
 }

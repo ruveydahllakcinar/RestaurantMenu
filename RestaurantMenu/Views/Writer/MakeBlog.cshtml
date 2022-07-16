@@ -1,0 +1,36 @@
+﻿@model RestaurantMenu.Models.Classes.Blog
+
+@{
+    ViewBag.Title = "MakeBlog";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<br />
+<h2>Update Blog</h2>
+<br />
+@using (Html.BeginForm("UpdateBlog", "Writer", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+    <div class="form-group" method="post">
+
+        @Html.LabelFor(x => x.Title)
+        @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.Date)
+        @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.BlogImg)
+        <input type="file" name="BlogImg" />
+        <br />
+        @Html.LabelFor(x => x.Explation)
+        @Html.TextBoxFor(x => x.Explation, new { @class = "form-control" })
+
+        <br />
+        @Html.HiddenFor(x => x.Id, new { @class = "form-control" })
+        <br />
+        <br />
+    </div>
+
+    <button class="btn btn-warning">UPDATE</button>
+}
