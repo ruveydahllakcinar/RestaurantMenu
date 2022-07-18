@@ -4,23 +4,30 @@
     ViewBag.Title = "AddEat";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-
-<h2>Add Eat</h2>
-
 <br />
-<form class="form-group" method="post">
-    @Html.LabelFor(x => x.EatName)
-    @Html.TextBoxFor(x => x.EatName, new { @class = "form-control" })
-    <br />
-    @Html.LabelFor(x => x.Price)
-    @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
-    <br />
-    @Html.LabelFor(x => x.Explanation)
-    @Html.TextBoxFor(x => x.Explanation, new { @class = "form-control" })
-    <br />
+<h2>Add Eat</h2>
+<br />
+@using (Html.BeginForm("AddEat", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
 
-    <button class="btn btn-warning">SAVE</button>
+    <form class="form-group" method="post">
+        @Html.LabelFor(x => x.EatName)
+        @Html.TextBoxFor(x => x.EatName, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.Price)
+        @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.Img)
+        <input type="file" name="Img" />
+        <br />
+        @Html.LabelFor(x => x.Explanation)
+        @Html.TextBoxFor(x => x.Explanation, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.TypeFood)
+        @Html.DropDownListFor(x => x.TypeId, (List<SelectListItem>)ViewBag.vl1, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-warning">SAVE</button>
 
-</form>
-
+    </form>
+}
 

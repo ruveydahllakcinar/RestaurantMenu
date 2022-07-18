@@ -15,13 +15,13 @@ Author URL: http://w3layouts.com
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Foodies - Restaurant Category Responsive Web Template - Menu : W3Layouts</title>
+    <title>Foodies| Menu</title>
     <!-- google-fonts -->
     <link href="//fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
           rel="stylesheet">
     <!-- //google-fonts -->
     <!-- Template CSS Style link -->
-    <link rel="stylesheet" href="assets/css/style-starter.css">
+    <link rel="stylesheet" href="~/Food Menu/Foodies-Starter/assets/css/style-starter.css">
 </head>
 
 <body>
@@ -49,7 +49,7 @@ Author URL: http://w3layouts.com
                     <!-- Item starts -->
                     @foreach (var x in Model)
                     {
-                        if (x.TypeofFood.Id==1)
+                        if (x.TypeFood.TypeId == 1)
                         {
                             <div class="row menu-item">
                                 <div class="col-3 p-0 position-relative">
@@ -90,7 +90,7 @@ Author URL: http://w3layouts.com
                         <!-- Item starts -->
                         @foreach (var x in Model)
                         {
-                            if (x.TypeofFood.Id == 2)
+                            if (x.TypeFood.TypeId == 2)
                             {
                                 <div class="row menu-item">
                                     <div class="col-3 p-0 position-relative">
@@ -125,14 +125,14 @@ Author URL: http://w3layouts.com
             </div>
 
             <div class="another-sec">
-                <h3 class="title-big mb-2">PIZZA</h3>
+                <h3 class="title-big mb-2">HAMBURGER</h3>
                 <div class="row menu-body">
                     <!-- Section starts: Dinner -->
                     <div class="col-lg-12 menu-section pr-lg-5">
                         <!-- Item starts -->
                         @foreach (var x in Model)
                         {
-                            if (x.TypeofFood.Id == 3)
+                            if (x.TypeFood.TypeId == 3)
                             {
                                 <div class="row menu-item">
                                     <div class="col-3 p-0 position-relative">
@@ -157,7 +157,45 @@ Author URL: http://w3layouts.com
                             }
 
                         }
-                  
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="another-sec">
+                <h3 class="title-big mb-2">PIZZA</h3>
+                <div class="row menu-body">
+                    <!-- Section starts: Dinner -->
+                    <div class="col-lg-12 menu-section pr-lg-5">
+                        <!-- Item starts -->
+                        @foreach (var x in Model)
+                        {
+                            if (x.TypeFood.TypeId == 4)
+                            {
+                                <div class="row menu-item">
+                                    <div class="col-3 p-0 position-relative">
+                                        <img src="~/Image/@x.Img" class="img-responsive" alt="">
+                                    </div>
+                                    <div class="col-9 pl-4">
+                                        <div class="row no-gutters">
+                                            <div class="col-9 menu-item-name">
+                                                <h6>@x.EatName</h6>
+                                            </div>
+                                            <div class="col-3 menu-item-price text-right">
+                                                <h6>@x.Price ₺</h6>
+                                            </div>
+                                        </div>
+                                        <div class="menu-item-description">
+                                            <p>@x.Explanation</p>
+                                            <p></p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            }
+
+                        }
+
                     </div>
 
                 </div>
@@ -171,7 +209,7 @@ Author URL: http://w3layouts.com
             <div class="container">
                 <div class="row aap-4-section">
                     <div class="col-lg-6 app4-right-image">
-                        <img src="assets/images/img3.png" class="img-responsive" alt="App Device" />
+                        <img src="~/Food Menu/Foodies-Starter/assets/images/img3.png" class="img-responsive" alt="App Device" />
                     </div>
                     <div class="col-lg-6 app4-left-text pl-lg-0 mb-lg-0 mb-sm-2 mb-4">
                         <h6>For 30% Discount</h6>
@@ -189,27 +227,7 @@ Author URL: http://w3layouts.com
                                     <button type="submit">Get Promocode</button>
                                 </form>
                             </div>
-                            <p class="mobile-text-app mt-4 pt-2">(Or) To Get Our Mobile Apps</p>
-                            <div class="app-4-icon">
-                                <ul>
-                                    <li>
-                                        <a href="#url" title="Apple" class="app-icon apple-vv">
-                                            <span class="fa fa-apple"
-                                                  aria-hidden="true"></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#url" title="Google play" class="app-icon play-vv">
-                                            <span class="fa fa-play" aria-hidden="true"></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#url" title="Microsoft" class="app-icon windows-vv">
-                                            <span class="fa fa-windows" aria-hidden="true"></span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
+                          
                         </div>
                     </div>
                 </div>
@@ -244,10 +262,10 @@ Author URL: http://w3layouts.com
     </script>
     <!-- //move top -->
     <!-- common jquery plugin -->
-    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="~/Food Menu/Foodies-Starter/assets/js/jquery-3.3.1.min.js"></script>
     <!-- //common jquery plugin -->
     <!-- theme switch js (light and dark)-->
-    <script src="assets/js/theme-change.js"></script>
+    <script src="~/Food Menu/Foodies-Starter/assets/js/theme-change.js"></script>
     <script>
         function autoType(elementClass, typingSpeed) {
             var thhis = $(elementClass);
@@ -322,7 +340,7 @@ Author URL: http://w3layouts.com
     </script>
     <!-- //disable body scroll which navbar is in active -->
     <!--bootstrap-->
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="~/Food Menu/Foodies-Starter/assets/js/bootstrap.min.js"></script>
     <!-- //bootstrap-->
     <!-- //Js scripts -->
 </body>

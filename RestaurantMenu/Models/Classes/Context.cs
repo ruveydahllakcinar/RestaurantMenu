@@ -13,7 +13,7 @@ namespace RestaurantMenu.Models.Classes
         public DbSet<Blog> Blogs { get; set; }
         public DbSet<Comments> Comments { get; set; }
         public DbSet<FoodList> FoodLists { get; set; }
-        public DbSet<TypeofFood> TypeofFoods { get; set; }
+        public DbSet<TypeFood> TypeFoods { get; set; }
         public DbSet<NewMember> NewMembers  { get; set; }
         public DbSet<Writer> Writers  { get; set; }
     }

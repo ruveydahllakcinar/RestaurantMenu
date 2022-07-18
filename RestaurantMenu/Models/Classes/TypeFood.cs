@@ -6,10 +6,10 @@ using System.Web;
 
 namespace RestaurantMenu.Models.Classes
 {
-    public class TypeofFood
+    public class TypeFood
     {
         [Key]
-        public int Id { get; set; }
+        public int TypeId { get; set; }
         public string TypeName { get; set; }
         public ICollection<FoodList> FoodLists { get; set; }
     }

@@ -4,28 +4,31 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 <br />
-<h2>Add Eat</h2>
+<h2>Update Blog</h2>
 <br />
-@using (Html.BeginForm("UpdateEat", "Admin", FormMethod.Post))
+@using (Html.BeginForm("UpdateEat", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
-<div class="form-group">
 
-    @Html.LabelFor(x => x.EatName)
-    @Html.TextBoxFor(x => x.EatName, new { @class = "form-control" })
-    <br />
-    @Html.LabelFor(x => x.Price)
-    @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
-    <br />
-    @Html.LabelFor(x => x.Explanation)
-    @Html.TextAreaFor(x => x.Explanation, new { @class = "form-control" })
-    <br />
-    @Html.HiddenFor(x => x.Id, new { @class = "form-control" })
-    <br />
-    @Html.LabelFor(x => x.TypeofFood)
-    @Html.DropDownListFor(x => x.Id, (List<SelectListItem>)ViewBag.vl1, new { @class = "form-control" })
-    <br />
-</div>
+    <div class="form-group" method="post">
 
+
+        @Html.LabelFor(x => x.EatName)
+        @Html.TextBoxFor(x => x.EatName, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.Price)
+        @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.Img)
+        <input type="file" name="Img" />
+        <br />
+        @Html.LabelFor(x => x.Explanation)
+        @Html.TextBoxFor(x => x.Explanation, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.TypeFood)
+        @Html.DropDownListFor(x => x.TypeId, (List<SelectListItem>)ViewBag.vl1, new { @class = "form-control" })
+        <br />
+    </div>
     <button class="btn btn-warning">UPDATE</button>
-}
 
+
+}

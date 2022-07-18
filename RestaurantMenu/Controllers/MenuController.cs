@@ -15,16 +15,16 @@ namespace RestaurantMenu.Controllers
         {
             var values = c.FoodLists.ToList();
             var query = from x in c.FoodLists
-                        group x by x.TypeofFood into g
+                        group x by x.TypeFood into g
                         select new FoodList
                         {
-                            TypeofFood = g.Key,
+                            TypeFood = g.Key,
                             Id = g.Count()
-                           
-                           
+
+
                         };
             return View(values);
-           
+
         }
 
 

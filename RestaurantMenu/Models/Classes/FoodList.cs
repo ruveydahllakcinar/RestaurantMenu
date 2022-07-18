@@ -14,7 +14,9 @@ namespace RestaurantMenu.Models.Classes
         public string Price { get; set; }
         public string Img { get; set; }
         public string Explanation { get; set; }
-        public virtual TypeofFood TypeofFood { get; set; }
-       
+
+        public int TypeId { get; set; }
+        public virtual TypeFood TypeFood { get; set; }
+
     }
 }
